@@ -77,14 +77,14 @@ img {
 }
 
 .container {
-  max-width: 1500px;
+  max-width: 100%;
 }
 
 aside {
-  width: 400px;
+  width: 100%;
   background-color: #f5f4f4c9;
   display: inline-block;
-  min-height: 725px;
+  min-height: 125px;
 }
 
 aside h4 {
@@ -100,7 +100,7 @@ aside h4 {
 }
 
 .allWeather {
-  width: 1050px;
+  width: 100%;
   display: inline-block;
   vertical-align: top;
 }
@@ -111,4 +111,28 @@ aside h4 {
 
 .card-body {
   padding: 0px;
+}
+
+/* made it resposive so when it hits 1500px width the project turns into aside instead of ontop */
+@media only screen and (min-width: 1500px) {
+  .container {
+    max-width: 1500px;
+  }
+
+  aside {
+    width: 400px;
+    background-color: #f5f4f4c9;
+    display: inline-block;
+    min-height: 725px;
+  }
+
+  .allWeather {
+    width: 1050px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  aside {
+    min-height: 725px;
+  }
 }
