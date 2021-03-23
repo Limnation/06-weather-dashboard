@@ -74,33 +74,79 @@ function getApi() {
 
                     var UVindexV= dataOne.current.uvi;
                     UVindexC.append(UVindexV);
+
+                    //for the Timezone
+                    var timezone = dataOne.timezone;
+                    console.log(timezone)
+                    var dateTimeFormat= "YYYY-MM-DD";
                     //daily Daily forecast weather data API response
+                    // starts at daily 1 becuase 0 is current day
                     //DAY 1
-                    var date1V= dataOne.daily[0].dt;
-                    date1.append(date1V);
+                    var date1V = dataOne.daily[1].dt;
+                    var dateTime = moment.unix(date1V).format(dateTimeFormat);
+                    date1.append(dateTime);
 
-                    var imageW1V = dataOne.daily[0].weather.icon;
-                    imageW1Link = `http://openweathermap.org/img/wn/${imageW1V}.png`
-                    imageW1.append(imageW1Link);
+                    var imageW1V = dataOne.daily[1].weather[1].icon;
+                    var imageW1Link = `http://openweathermap.org/img/wn/${imageW1V}.png`
+                    imageW1.attr('src', imageW1Link);
 
-                    var temp1V= dataOne.daily[0].temp;
+                    var temp1V = dataOne.daily[1].temp.max;
                     temp1.append(temp1V);
 
-                    var humidity1V= dataOne.daily[0].humidity;
+                    var humidity1V= dataOne.daily[1].humidity;
                     humidity1.append(humidity1V);
                     //DAY 2
                     var date2V= dataOne.daily[1].dt;
                     date2.append(date2V);
 
-                    var imageW2V = dataOne.daily[1].weather.icon;
-                    imageW2Link = `http://openweathermap.org/img/wn/${imageW1V}.png`
-                    imageW2.append(imageW2Link);
+                    var imageW2V = dataOne.daily[2].weather[0].icon;
+                    var imageW2Link = `http://openweathermap.org/img/wn/${imageW2V}.png`
+                    imageW2.attr('src', imageW2Link);
 
-                    var temp2V= dataOne.daily[1].temp;
+                    var temp2V= dataOne.daily[2].temp.max;
                     temp2.append(temp2V);
 
-                    var humidity2V= dataOne.daily[1].humidity;
+                    var humidity2V= dataOne.daily[2].humidity;
                     humidity2.append(humidity2V);
+                    //DAY 3
+                    var date3V= dataOne.daily[3].dt;
+                    date3.append(date3V);
+
+                    var imageW3V = dataOne.daily[3].weather[0].icon;
+                    var imageW3Link = `http://openweathermap.org/img/wn/${imageW3V}.png`
+                    imageW3.attr('src', imageW3Link);
+
+                    var temp3V= dataOne.daily[3].temp.max;
+                    temp3.append(temp3V);
+
+                    var humidity3V= dataOne.daily[3].humidity;
+                    humidity3.append(humidity3V);
+                    //DAY 4
+                    var date4V= dataOne.daily[4].dt;
+                    date4.append(date4V);
+
+                    var imageW4V = dataOne.daily[4].weather[0].icon;
+                    var imageW4Link = `http://openweathermap.org/img/wn/${imageW4V}.png`
+                    imageW4.attr('src', imageW4Link);
+
+                    var temp4V= dataOne.daily[4].temp.max;
+                    temp4.append(temp4V);
+
+                    var humidity4V= dataOne.daily[4].humidity;
+                    humidity4.append(humidity4V);
+                    //DAY 5
+                    var date5V= dataOne.daily[5].dt;
+                    date4.append(date5V);
+
+                    var imageW5V = dataOne.daily[5].weather[0].icon;
+                    var imageW5Link = `http://openweathermap.org/img/wn/${imageW5V}.png`
+                    imageW5.attr('src', imageW5Link);
+
+                    var temp5V= dataOne.daily[5].temp.max;
+                    temp5.append(temp5V);
+
+                    var humidity5V= dataOne.daily[5].humidity;
+                    humidity5.append(humidity5V);
                 });
         });
     
