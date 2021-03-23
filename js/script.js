@@ -1,5 +1,4 @@
 var button = $('#button-addon2');
-var input = $('#search').val();
 // C for content in html
 var cityC = $('#cityC');
 var dateC = $('#dateC')
@@ -33,7 +32,8 @@ var date5 = $('#date5');
 var imageW5 = $('#imageW5');
 var temp5 = $('#temp5');
 var humidity5 = $('#humidity5');
-          
+
+
 function getApi() {
 
     var input = $('#search').val();
@@ -165,44 +165,28 @@ function getApi() {
                         $(UVindexC).addClass("severe");
                     }
                 });
-        });
-    
-    
+        });   
 }
 button.on('click', getApi);
 
-//makes the function available after the document is loaded
-$(document).ready(function () {
-    //targets the button class btn then returns the previous sibling element(textarea)a and its ID then returns the value of the textrea's id with .val()
-    $('.btn').on("click", function () {
-        let input = $('#search').val();
-        var historyList = $("#list-group");
-        var history = [];
-        historyList.innerHTML = "";
-        historyCountSpan.textContent = history.length;
+//creating empty array
+var historyArr = [];
 
-        // Render a new li for each todo
-        for (var i = 0; i < history.length; i++) {
-            var historys = history[i];
-
-            var li = document.createElement("li");
-            li.textContent = historys;
-            li.setAttribute("data-index", i);
-
-            historyList.appendChild(li);
-        }
-        localStorage.setItem(history);
-    });
-    //gets all the stored data from local storage
-    function localStorageCall() {
-        // Get stored history from localStorage
-        // var storedhistory = JSON.parse(localStorage.getItem("history"));
-
-        // // If todos were retrieved from localStorage, update the todos array to it
-        // if (storedhistory !== null) {
-        //     history = storedhistory;
-        // }
+function addCity() {
+    let input = $('#search').val();
+    //adding input to array
+    historyArr.push(input);
+    console.log(historyArr);
+    //created the list(li)
+    var li = document.createElement("li");
+    //setting the New li to = History array itterated
+    for (let i = 0; i < historyArr.length; i++) {
+        var node = document.createTextNode(historyArr[i]);
     }
-    //invoked local sotrage funtion
-    localStorageCall()
-});
+    li.appendChild(node);
+    //telling where li to go in the html
+    var ulList = $(".list-group");
+    ulList.append(li);
+    li.classList.add("list-group-item");
+}
+button.on('click', addCity);
