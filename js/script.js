@@ -170,4 +170,39 @@ function getApi() {
     
 }
 button.on('click', getApi);
-  
+
+//makes the function available after the document is loaded
+$(document).ready(function () {
+    //targets the button class btn then returns the previous sibling element(textarea)a and its ID then returns the value of the textrea's id with .val()
+    $('.btn').on("click", function () {
+        let input = $('#search').val();
+        var historyList = $("#list-group");
+        var history = [];
+        historyList.innerHTML = "";
+        historyCountSpan.textContent = history.length;
+
+        // Render a new li for each todo
+        for (var i = 0; i < history.length; i++) {
+            var historys = history[i];
+
+            var li = document.createElement("li");
+            li.textContent = historys;
+            li.setAttribute("data-index", i);
+
+            historyList.appendChild(li);
+        }
+        localStorage.setItem(history);
+    });
+    //gets all the stored data from local storage
+    function localStorageCall() {
+        // Get stored history from localStorage
+        // var storedhistory = JSON.parse(localStorage.getItem("history"));
+
+        // // If todos were retrieved from localStorage, update the todos array to it
+        // if (storedhistory !== null) {
+        //     history = storedhistory;
+        // }
+    }
+    //invoked local sotrage funtion
+    localStorageCall()
+});
