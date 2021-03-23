@@ -229,7 +229,6 @@ $(document).ready(function(){
         // alert("list was clicked.");
         // gets the text from list-group-item class(City history)
         let historyCitys = $(this).text();
-        console.log(historyCitys)
         // uses the text you clicked on and puts it in the search value
         $('#search').val(historyCitys);
     });
