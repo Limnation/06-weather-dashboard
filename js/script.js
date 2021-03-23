@@ -1,4 +1,5 @@
 var button = $('#button-addon2');
+var all = $('.allWeather');
 // C for content in html
 var cityC = $('#cityC');
 var dateC = $('#dateC')
@@ -43,6 +44,8 @@ function getApi() {
     if (input === "") {
         alert("Please put in a value");
     } else {
+        //display all the weather
+        all.show()
         fetch(url)
             .then(function (response) {
                 return response.json();
@@ -106,8 +109,9 @@ function getApi() {
                         var humidity1V = dataOne.daily[1].humidity;
                         humidity1.append(humidity1V);
                         //DAY 2
-                        var date2V = dataOne.daily[1].dt;
-                        date2.append(date2V);
+                        var date2V = dataOne.daily[2].dt;
+                        var dateTime2 = moment.unix(date2V).format(dateTimeFormat);
+                        date2.append(dateTime2);
 
                         var imageW2V = dataOne.daily[2].weather[0].icon;
                         var imageW2Link = `http://openweathermap.org/img/wn/${imageW2V}.png`
@@ -120,7 +124,8 @@ function getApi() {
                         humidity2.append(humidity2V);
                         //DAY 3
                         var date3V = dataOne.daily[3].dt;
-                        date3.append(date3V);
+                        var dateTime3 = moment.unix(date3V).format(dateTimeFormat);
+                        date3.append(dateTime3);
 
                         var imageW3V = dataOne.daily[3].weather[0].icon;
                         var imageW3Link = `http://openweathermap.org/img/wn/${imageW3V}.png`
@@ -133,7 +138,8 @@ function getApi() {
                         humidity3.append(humidity3V);
                         //DAY 4
                         var date4V = dataOne.daily[4].dt;
-                        date4.append(date4V);
+                        var dateTime4 = moment.unix(date4V).format(dateTimeFormat);
+                        date4.append(dateTime4);
 
                         var imageW4V = dataOne.daily[4].weather[0].icon;
                         var imageW4Link = `http://openweathermap.org/img/wn/${imageW4V}.png`
@@ -146,7 +152,8 @@ function getApi() {
                         humidity4.append(humidity4V);
                         //DAY 5
                         var date5V = dataOne.daily[5].dt;
-                        date4.append(date5V);
+                        var dateTime5 = moment.unix(date5V).format(dateTimeFormat);
+                        date5.append(dateTime5);
 
                         var imageW5V = dataOne.daily[5].weather[0].icon;
                         var imageW5Link = `http://openweathermap.org/img/wn/${imageW5V}.png`
@@ -194,6 +201,10 @@ button.on('click', getApi);
 
 $(document).ready(function () {
     function onload() {
+        //hides allweather
+        all.hide()
+
+        //gets array from local storage
         historyArr = JSON.parse(localStorage.getItem("history")) || [];
         console.log(historyArr)
         
@@ -211,3 +222,8 @@ $(document).ready(function () {
     }
     onload()
 });
+
+//on click on history to repop
+// $('.btns').on("click", function () {
+//     localStorage.setItem($(this).prop("id"), $(this).prev().val());
+// });

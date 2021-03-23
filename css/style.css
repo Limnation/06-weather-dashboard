@@ -39,6 +39,10 @@
   min-height: 250px;
 }
 
+.card h5 {
+  margin: 10px;
+}
+
 .forcast h3 {
   margin: 10px;
 }
@@ -103,4 +107,8 @@ aside h4 {
 
 .weather {
   min-height: 400px;
+}
+
+.card-body {
+  padding: 0px;
 }
