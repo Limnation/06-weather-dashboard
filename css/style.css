@@ -10,3 +10,18 @@
 .btn img {
   width: 20px;
 }
+
+.favorable {
+  background-color: #40fc6f9c;
+  color: white;
+}
+
+.moderate {
+  background-color: #e5ff71cc;
+  color: white;
+}
+
+.severe {
+  background-color: #fc4a409c;
+  color: white;
+}

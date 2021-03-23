@@ -2,6 +2,8 @@ var button = $('#button-addon2');
 var input = $('#search').val();
 // C for content in html
 var cityC = $('#cityC');
+var dateC = $('#dateC')
+var imageC = $('#imageC')
 var tempC = $('#tempC');
 var humidityC = $('#humidityC');
 var windSpeedC = $('#windSpeedC');
@@ -76,17 +78,23 @@ function getApi() {
                     UVindexC.append(UVindexV);
 
                     //for the Timezone
-                    var timezone = dataOne.timezone;
-                    console.log(timezone)
-                    var dateTimeFormat= "YYYY-MM-DD";
+                    var dateTimeFormat= "MM/DD/YYYY";
                     //daily Daily forecast weather data API response
                     // starts at daily 1 becuase 0 is current day
+                    //current day
+                    var date0V = dataOne.daily[0].dt;
+                    var dateTime0 = moment.unix(date0V).format(dateTimeFormat);
+                    dateC.append(dateTime0);
+
+                    var imageW0V = dataOne.daily[0].weather[0].icon;
+                    var imageW0Link = `http://openweathermap.org/img/wn/${imageW0V}.png`
+                    imageC.attr('src', imageW0Link);
                     //DAY 1
                     var date1V = dataOne.daily[1].dt;
-                    var dateTime = moment.unix(date1V).format(dateTimeFormat);
-                    date1.append(dateTime);
+                    var dateTime1 = moment.unix(date1V).format(dateTimeFormat);
+                    date1.append(dateTime1);
 
-                    var imageW1V = dataOne.daily[1].weather[1].icon;
+                    var imageW1V = dataOne.daily[1].weather[0].icon;
                     var imageW1Link = `http://openweathermap.org/img/wn/${imageW1V}.png`
                     imageW1.attr('src', imageW1Link);
 
@@ -147,6 +155,15 @@ function getApi() {
 
                     var humidity5V= dataOne.daily[5].humidity;
                     humidity5.append(humidity5V);
+
+                    //presented with a color that indicates whether the conditions are favorable(1-2), moderate(3-7), or severe(8+)
+                    if (UVindexV <= 2) {
+                        $(UVindexC).addClass("favorable");
+                    } else if (UVindexV > 2 && UVindexV <= 7){
+                        $(UVindexC).addClass("moderate");
+                    } else {
+                        $(UVindexC).addClass("severe");
+                    }
                 });
         });
     
