@@ -224,6 +224,10 @@ $(document).ready(function () {
 });
 
 //on click on history to repop
-// $('.btns').on("click", function () {
-//     localStorage.setItem($(this).prop("id"), $(this).prev().val());
-// });
+$(document).ready(function(){
+    $('.list-group-item').click(function () {
+        alert("list was clicked.");
+        // let historyCitys = $(this);
+        // $('#search').val() = historyCitys;
+    });
+});
