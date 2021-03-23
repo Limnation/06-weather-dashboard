@@ -25,6 +25,7 @@
     <div class="container">
       <aside>
         <!-- bootstrap button addons -->
+        <h4>Search for a City:</h4>
         <div class="input-group mb-3">
           <input type="text" id="search" class="form-control input" placeholder="Recipient's username" aria-label="City Name" aria-describedby="button-addon2">
           <button class="btn btn-outline-secondary" type="button" id="button-addon2"><img src="images/magnifying-glass.png" alt="magnifying glass icon"></button>
@@ -33,86 +34,90 @@
         <ul class="list-group">
         </ul>
       </aside>
-      <section class="weather">
-        <!-- current weather goes here -->
-        <!-- City Name with date -->
-        <h2 id="cityC" ></h2>
-        <h2 id="dateC" ></h2>
-        <img id="imageC" src="" class="card-img-top" alt="">
-        <!-- Current temperature -->
-        <p class="currentP">Temperature: <span id="tempC"></span> °F</p>
-        <!-- Current humidity -->
-        <p class="currentP">Humidity: <span id="humidityC">%</span></p>
-        <!-- Current Wind Speed -->
-        <p class="currentP">Wind Speed:<span id="windSpeedC" ></span> MPH</p>
-        <!-- Current UV index -->
-        <p class="currentP" id="UVindexC" ></p>
-      </section>
-      <section class="forcast">
-        <!--5 day foecast -->
-        <h3>5-Day Forcast:</h3>
-        <!-- DAY 1 -->
-        <div class="card-group">
-          <div class="card">
-            <!-- date -->
-            <h5 id="date1" class="card-title"></h5>
-            <img id="imageW1" src="" class="card-img-top" alt="">
-            <div class="card-body">
-              <!-- Temp -->
-              <p class="card-text">Temp: <span id="temp1"></span> °F</p>
-              <!-- Humidity -->
-              <p class="card-text"><span id="humidity1"></span>%</p>
+        
+      
+      <section class="allWeather">
+        <section class="weather">
+          <!-- current weather goes here -->
+          <!-- City Name with date -->
+          <h2 id="cityC" ></h2>
+          <h2 id="dateC" ></h2>
+          <img id="imageC" src="" class="card-img-top" alt="">
+          <!-- Current temperature -->
+          <p class="currentP">Temperature: <span id="tempC"></span> °F</p>
+          <!-- Current humidity -->
+          <p class="currentP">Humidity: <span id="humidityC"></span>%</p>
+          <!-- Current Wind Speed -->
+          <p class="currentP">Wind Speed:<span id="windSpeedC" ></span> MPH</p>
+          <!-- Current UV index -->
+          <p class="currentP">UV Index: <span id="UVindexC"></span></p>
+        </section>
+        <section class="forcast">
+          <!--5 day foecast -->
+          <h3>5-Day Forcast:</h3>
+          <!-- DAY 1 -->
+          <div class="card-group">
+            <div class="card">
+              <!-- date -->
+              <h5 id="date1" class="card-title"></h5>
+              <img id="imageW1" src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <!-- Temp -->
+                <p class="card-text">Temp: <span id="temp1"></span> °F</p>
+                <!-- Humidity -->
+                <p class="card-text"><span id="humidity1"></span>%</p>
+              </div>
+            </div>
+            <!-- DAY 2 -->
+            <div class="card">
+              <!-- date -->
+              <h5 id="date2" class="card-title"></h5>
+              <img id="imageW2" src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <!-- Temp -->
+                <p class="card-text">Temp: <span id="temp2"></span> °F</p>
+                <!-- Humidity -->
+                <p class="card-text"><span id="humidity2"></span>%</p>
+              </div>
+            </div>
+            <!-- DAY 3 -->
+            <div class="card">
+              <!-- date -->
+              <h5 id="date3" class="card-title"></h5>
+              <img id="imageW3" src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <!-- Temp -->
+                <p class="card-text">Temp: <span id="temp3"></span> °F</p>
+                <!-- Humidity -->
+                <p class="card-text"><span id="humidity3"></span>%</p>
+              </div>
+            </div>
+            <!-- DAY 4 -->
+            <div class="card">
+              <!-- date -->
+              <h5 id="date4" class="card-title"></h5>
+              <img id="imageW4" src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <!-- Temp -->
+                <p class="card-text">Temp: <span id="temp4"></span> °F</p>
+                <!-- Humidity -->
+                <p class="card-text"><span id="humidity4"></span>%</p>
+              </div>
+            </div>
+            <!-- DAY 5 -->
+            <div class="card">
+              <!-- date -->
+              <h5 id="date5" class="card-title"></h5>
+              <img id="imageW5" src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <!-- Temp -->
+                <p class="card-text">Temp: <span id="temp5"></span> °F</p>
+                <!-- Humidity -->
+                <p class="card-text"><span id="humidity5"></span>%</p>
+              </div>
             </div>
           </div>
-          <!-- DAY 2 -->
-          <div class="card">
-            <!-- date -->
-            <h5 id="date2" class="card-title"></h5>
-            <img id="imageW2" src="" class="card-img-top" alt="">
-            <div class="card-body">
-              <!-- Temp -->
-              <p class="card-text">Temp: <span id="temp2"></span> °F</p>
-              <!-- Humidity -->
-              <p class="card-text"><span id="humidity2"></span>%</p>
-            </div>
-          </div>
-          <!-- DAY 3 -->
-          <div class="card">
-            <!-- date -->
-            <h5 id="date3" class="card-title"></h5>
-            <img id="imageW3" src="" class="card-img-top" alt="">
-            <div class="card-body">
-              <!-- Temp -->
-              <p class="card-text">Temp: <span id="temp3"></span> °F</p>
-              <!-- Humidity -->
-              <p class="card-text"><span id="humidity3"></span>%</p>
-            </div>
-          </div>
-          <!-- DAY 4 -->
-          <div class="card">
-            <!-- date -->
-            <h5 id="date4" class="card-title"></h5>
-            <img id="imageW4" src="" class="card-img-top" alt="">
-            <div class="card-body">
-              <!-- Temp -->
-              <p class="card-text">Temp: <span id="temp4"></span> °F</p>
-              <!-- Humidity -->
-              <p class="card-text"><span id="humidity4"></span>%</p>
-            </div>
-          </div>
-          <!-- DAY 5 -->
-          <div class="card">
-            <!-- date -->
-            <h5 id="date5" class="card-title"></h5>
-            <img id="imageW5" src="" class="card-img-top" alt="">
-            <div class="card-body">
-              <!-- Temp -->
-              <p class="card-text">Temp: <span id="temp5"></span> °F</p>
-              <!-- Humidity -->
-              <p class="card-text"><span id="humidity5"></span>%</p>
-            </div>
-          </div>
-        </div>
+        </section>
       </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>

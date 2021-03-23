@@ -8,7 +8,13 @@
 }
 
 .btn img {
-  width: 20px;
+  width: 35px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.btn {
+  padding: 0px;
 }
 
 .favorable {
@@ -30,8 +36,71 @@
   background-color: #0084ff9c;
   color: #ffffff;
   margin: 10px;
+  min-height: 250px;
 }
 
 .forcast h3 {
   margin: 10px;
+}
+
+.weather {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.weather h2,
+img,
+p {
+  margin: 10px;
+}
+
+.weather h2,
+img {
+  display: inline-block;
+}
+
+.input-group {
+  margin: 10px;
+}
+
+.weather img {
+  width: 70px;
+}
+
+.card img {
+  width: 50px;
+}
+
+.container {
+  max-width: 1500px;
+}
+
+aside {
+  width: 400px;
+  background-color: #f5f4f4c9;
+  display: inline-block;
+  min-height: 725px;
+}
+
+aside h4 {
+  margin: 10px;
+}
+
+.list-group {
+  margin: 0px 10px;
+}
+
+#search {
+  max-width: 280px;
+}
+
+.allWeather {
+  width: 1050px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.weather {
+  min-height: 400px;
 }
