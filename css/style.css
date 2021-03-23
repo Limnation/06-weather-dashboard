@@ -25,3 +25,13 @@
   background-color: #fc4a409c;
   color: white;
 }
+
+.card {
+  background-color: #0084ff9c;
+  color: #ffffff;
+  margin: 10px;
+}
+
+.forcast h3 {
+  margin: 10px;
+}
