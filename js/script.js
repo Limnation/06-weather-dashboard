@@ -171,9 +171,8 @@ function getApi() {
         
         //creating empty array
         var historyArr = JSON.parse(localStorage.getItem("history")) || [];
-        
-        historyArr.push(input);
         console.log(historyArr);
+        historyArr.push(input);
         //created the list(li)
         var li = document.createElement("li");
         // Store
@@ -182,7 +181,7 @@ function getApi() {
         storedHistory = JSON.parse(localStorage.getItem("history"));
         //setting the New li to = History array itterated
         for (let i = 0; i < historyArr.length; i++) {
-            var node = document.createTextNode(storedHistory[i]);
+            var node = document.createTextNode(historyArr[i]);
         }
         li.appendChild(node);
         //telling where li to go in the html
@@ -192,3 +191,23 @@ function getApi() {
     }
 }
 button.on('click', getApi);
+
+$(document).ready(function () {
+    function onload() {
+        historyArr = JSON.parse(localStorage.getItem("history")) || [];
+        console.log(historyArr)
+        
+        //setting the New li to = History array itterated
+        for (let i = 0; i < historyArr.length; i++) {
+            var node = document.createTextNode(historyArr[i]);
+            //created the list(li)
+            var li = document.createElement("li");
+            li.appendChild(node);
+            //telling where li to go in the html
+            var ulList = $(".list-group");
+            ulList.append(li);
+            li.classList.add("list-group-item");
+        }
+    }
+    onload()
+});
