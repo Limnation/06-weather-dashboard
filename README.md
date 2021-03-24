@@ -2,7 +2,7 @@
 
 ## Myreadme with description
 
-The main objective I was trying to accomlish in this website was to get informations from the OpenWeather API(https://openweathermap.org/api) and display the current weather of the city searched and the 5 day forcast of that city then save the city in local storage then be able to click on that last searched city and have it repopulate in the search input be be searched again.
+The main objective I was trying to accomlish in this website was to get informations from the OpenWeather API(https://openweathermap.org/api) and display the current weather of the city searched and the 5 day forcast of that city then save the city in local storage then be able to click on that last searched city and have it repopulate in the search input and searched again.
 
 ## screenshot
 
