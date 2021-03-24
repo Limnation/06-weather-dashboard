@@ -231,6 +231,7 @@ $(document).ready(function(){
         let historyCitys = $(this).text();
         // uses the text you clicked on and puts it in the search value
         $('#search').val(historyCitys);
+        getApi();
     });
 });
 
