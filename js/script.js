@@ -36,7 +36,7 @@ var humidity5 = $('#humidity5');
 
 
 function getApi() {
-
+    clearout()
     var input = $('#search').val();
     var cityName = encodeURIComponent(input);
     // added imperial to the api to get units in Fahrenheit
@@ -92,7 +92,7 @@ function getApi() {
                         dateC.append(dateTime0);
 
                         var imageW0V = dataOne.daily[0].weather[0].icon;
-                        var imageW0Link = `http://openweathermap.org/img/wn/${imageW0V}.png`
+                        var imageW0Link = `https://openweathermap.org/img/wn/${imageW0V}.png`
                         imageC.attr('src', imageW0Link);
                         //DAY 1
                         var date1V = dataOne.daily[1].dt;
@@ -100,7 +100,7 @@ function getApi() {
                         date1.append(dateTime1);
 
                         var imageW1V = dataOne.daily[1].weather[0].icon;
-                        var imageW1Link = `http://openweathermap.org/img/wn/${imageW1V}.png`
+                        var imageW1Link = `https://openweathermap.org/img/wn/${imageW1V}.png`
                         imageW1.attr('src', imageW1Link);
 
                         var temp1V = dataOne.daily[1].temp.max;
@@ -114,7 +114,7 @@ function getApi() {
                         date2.append(dateTime2);
 
                         var imageW2V = dataOne.daily[2].weather[0].icon;
-                        var imageW2Link = `http://openweathermap.org/img/wn/${imageW2V}.png`
+                        var imageW2Link = `https://openweathermap.org/img/wn/${imageW2V}.png`
                         imageW2.attr('src', imageW2Link);
 
                         var temp2V = dataOne.daily[2].temp.max;
@@ -128,7 +128,7 @@ function getApi() {
                         date3.append(dateTime3);
 
                         var imageW3V = dataOne.daily[3].weather[0].icon;
-                        var imageW3Link = `http://openweathermap.org/img/wn/${imageW3V}.png`
+                        var imageW3Link = `https://openweathermap.org/img/wn/${imageW3V}.png`
                         imageW3.attr('src', imageW3Link);
 
                         var temp3V = dataOne.daily[3].temp.max;
@@ -142,7 +142,7 @@ function getApi() {
                         date4.append(dateTime4);
 
                         var imageW4V = dataOne.daily[4].weather[0].icon;
-                        var imageW4Link = `http://openweathermap.org/img/wn/${imageW4V}.png`
+                        var imageW4Link = `https://openweathermap.org/img/wn/${imageW4V}.png`
                         imageW4.attr('src', imageW4Link);
 
                         var temp4V = dataOne.daily[4].temp.max;
@@ -156,7 +156,7 @@ function getApi() {
                         date5.append(dateTime5);
 
                         var imageW5V = dataOne.daily[5].weather[0].icon;
-                        var imageW5Link = `http://openweathermap.org/img/wn/${imageW5V}.png`
+                        var imageW5Link = `https://openweathermap.org/img/wn/${imageW5V}.png`
                         imageW5.attr('src', imageW5Link);
 
                         var temp5V = dataOne.daily[5].temp.max;
@@ -233,3 +233,10 @@ $(document).ready(function(){
         $('#search').val(historyCitys);
     });
 });
+
+//clears out all data feilds if 
+function clearout() {
+    if ($('#cityC') !== "") {
+        $('#cityC, #dateC, #imageC, #tempC, #humidityC, #windSpeedC, #UVindexC, #date1, #imageW1, #temp1, #humidity1, #date2, #imageW2, #temp2, #humidity2, #date3, #imageW3, #temp3, #humidity3, #date4, #imageW4, #temp4, #humidity4, #date5, #imageW5, #temp5, #humidity5').empty();
+    }
+}
